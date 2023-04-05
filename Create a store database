@@ -1,0 +1,32 @@
+-Create a store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, product text, price integer, sizes integer, material text);
+
+INSERT INTO store VALUES 
+(1, 'T-shirt', 15, 5, 'Cotton'),
+(2, 'T-shirt', 12, 5, 'Polyester'),
+(3, 'Polo', 20, 5, 'Cotton'),
+(4, 'Tank top', 10, 3, 'Cotton'),
+(5, 'Undershirt', 8, 5, 'Polyester'),
+(6, 'Jeans', 30, 12, 'Cotton'),
+(7, 'Joggers', 25, 5, 'Twill'),
+(8, 'Joggers', 17, 5, 'Cotton'),
+(9, 'Shorts', 10, 5, 'Polyester'),
+(10, 'Shorts', 15, 5, 'Khaki'),
+(11, 'Trunks', 17, 5, 'Spandex'),
+(12, 'Briefs', 8, 5, 'Cotton'),
+(13, 'Boxer Briefs', 10, 5, 'Cotton'),
+(14, 'Boxer Briefs', 9, 5, 'Polyester'),
+(15, 'Boxers', 12, 5, 'Cotton');
+
+-Display database ordered by price
+SELECT * FROM store
+ORDER BY price;
+
+-Display database ordered by material
+SELECT * FROM store
+ORDER BY material;
+
+-Display average price of specific item group
+SELECT AVG(price) 'avg cotton item price' FROM store
+where material='Cotton' 
